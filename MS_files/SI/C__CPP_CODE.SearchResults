@@ -1,0 +1,110 @@
+---- TextQuery Matches (106 in 18 files) ----
+	3ed_query.cpp (10):void TextQuery::store_file(ifstream &is)
+3ed_query.cpp (10):set<string> TextQuery::exclusion_set = build_exclusion_set();
+3ed_query.cpp (10):string TextQuery::whitespace_chars(" \t\n\v\r\f");
+3ed_query.cpp (10):void TextQuery::build_map()
+3ed_query.cpp (10):TextQuery::str_size 
+3ed_query.cpp (10):TextQuery::skip_whitespace(const string &line, str_size pos)
+3ed_query.cpp (10):void TextQuery::test_insert(const string &line, str_size prev_pos, 
+3ed_query.cpp (10):void TextQuery::strip_suffixes(string &word)
+3ed_query.cpp (10):void TextQuery::suffix_s(string &word)
+3ed_query.cpp (10):int TextQuery::chk_ending(const string &word, const char *ending)
+3ed_query.cpp (10):void TextQuery::strip_caps(string &line)
+3ed_query.cpp (10):void TextQuery::strip_punct(string &line)
+3ed_query.cpp (10):set<string> TextQuery::build_exclusion_set()
+3ed_query.cpp (10):bool TextQuery::exclude_word(const string &word)
+3ed_query.cpp (10):vector<TextQuery::location> TextQuery::run_query(const string &s)
+3ed_query.cpp (10):void TextQuery::display_map()
+3ed_query.h (10): * This version of the TextQuery class is more complicated than
+3ed_query.h (10):class TextQuery {
+3ed_querymain.cpp (10):    TextQuery tq;
+3ed_querymain.cpp (10):        vector<TextQuery::location> locs = tq.run_query(sought);
+3ed_querymain.cpp (10):        vector<TextQuery::location>::size_type size = locs.size();
+3ed_querymain.cpp (10):        vector<TextQuery::location>::iterator it = locs.begin();
+Get_print.cpp (15):#include "TextQuery.h"
+Get_print.cpp (15):TextQuery build_textfile(const string &filename)
+Get_print.cpp (15):        return TextQuery();
+Get_print.cpp (15):    TextQuery ret;
+Get_print.cpp (15):void print_results(const set<TextQuery::line_no>& locs, const TextQuery &file)
+Get_print.cpp (15):    set<TextQuery::line_no>::size_type size = locs.size();
+Get_print.cpp (15):    set<TextQuery::line_no>::const_iterator it = locs.begin();
+Main1.cpp (15):#include "TextQuery.h"
+Main1.cpp (15):    TextQuery file = build_textfile(argv[1]);
+Main1.cpp (15):        const set<TextQuery::line_no> locs = name.eval(file);
+Main2.cpp (15):#include "TextQuery.h"
+Main2.cpp (15):    TextQuery file = build_textfile(argv[1]);
+Main2.cpp (15):        const set<TextQuery::line_no> locs = notq.eval(file);
+Main3.cpp (15):#include "TextQuery.h"
+Main3.cpp (15):    TextQuery file = build_textfile(argv[1]);
+Main3.cpp (15):        const set<TextQuery::line_no> locs = orq.eval(file);
+Main4.cpp (15):#include "TextQuery.h"
+Main4.cpp (15):    TextQuery file = build_textfile(argv[1]);
+Main4.cpp (15):        set<TextQuery::line_no> locs = andq.eval(file);
+Main5.cpp (15):#include "TextQuery.h"
+Main5.cpp (15):    TextQuery file = build_textfile(argv[1]);
+Main5.cpp (15):        const set<TextQuery::line_no> locs = q.eval(file);
+Query.cpp (15):#include "TextQuery.h"
+Query.cpp (15):set<TextQuery::line_no>
+Query.cpp (15):NotQuery::eval(const TextQuery& file) const
+Query.cpp (15):    set<TextQuery::line_no> has_val = query.eval(file);
+Query.cpp (15):    for (TextQuery::line_no n = 0; n != file.size(); ++n)
+Query.cpp (15):set<TextQuery::line_no>
+Query.cpp (15):AndQuery::eval(const TextQuery& file) const
+Query.cpp (15):set<TextQuery::line_no>
+Query.cpp (15):OrQuery::eval(const TextQuery& file) const
+Query.cpp (16):#include "TextQuery.h"
+Query.cpp (16):set<TextQuery::line_no>
+Query.cpp (16):NotQuery::eval(const TextQuery& file) const
+Query.cpp (16):    set<TextQuery::line_no> has_val = query.eval(file);
+Query.cpp (16):    for (TextQuery::line_no n = 0; n != file.size(); ++n)
+Query.cpp (16):set<TextQuery::line_no>
+Query.cpp (16):AndQuery::eval(const TextQuery& file) const
+Query.cpp (16):set<TextQuery::line_no>
+Query.cpp (16):OrQuery::eval(const TextQuery& file) const
+Query.h (15):#include "TextQuery.h"
+Query.h (15):    typedef TextQuery::line_no line_no;
+Query.h (15):        eval(const TextQuery&) const = 0; 
+Query.h (15):    std::set<TextQuery::line_no> 
+Query.h (15):      eval(const TextQuery &t) const { return q->eval(t); }
+Query.h (15):    std::set<line_no> eval(const TextQuery &t) const
+Query.h (15):    std::set<line_no> eval(const TextQuery&) const;
+Query.h (15):    std::set<line_no> eval(const TextQuery&) const;
+Query.h (15):    std::set<line_no> eval(const TextQuery&) const;
+Query.h (15):TextQuery build_textfile(const std::string&);
+Query.h (15):void print_results(const std::set<TextQuery::line_no>&, const TextQuery&);
+Query.h (16):#include "TextQuery.h"
+Query.h (16):    typedef TextQuery::line_no line_no;
+Query.h (16):        eval(const TextQuery&) const = 0; 
+Query.h (16):    std::set<TextQuery::line_no>
+Query.h (16):      eval(const TextQuery &t) const {return h->eval(t);}
+Query.h (16):    std::set<line_no> eval(const TextQuery &t) const
+Query.h (16):    std::set<line_no> eval(const TextQuery&) const;
+Query.h (16):    std::set<line_no> eval(const TextQuery&) const;
+Query.h (16):    std::set<line_no> eval(const TextQuery&) const;
+Query.h (16):TextQuery build_textfile(const std::string&);
+Query.h (16):void print_results(const std::set<TextQuery::line_no>&, const TextQuery&);
+Querymain.cpp (10):#include "TextQuery.h"
+Querymain.cpp (10):void print_results(const set<TextQuery::line_no>& locs, 
+Querymain.cpp (10):                   const string& sought, const TextQuery &file)
+Querymain.cpp (10):    typedef set<TextQuery::line_no> line_nums; 
+Querymain.cpp (10):    TextQuery tq;
+Querymain.cpp (10):        set<TextQuery::line_no> locs = tq.run_query(s);
+Querymain.cpp (15):#include "TextQuery.h"
+Querymain.cpp (15):    TextQuery file = build_textfile(argv[1]);
+Querymain.cpp (15):        typedef set<TextQuery::line_no> line_nums; 
+TextQuery.cpp (10):#include "TextQuery.h"
+TextQuery.cpp (10):string TextQuery::text_line(line_no line) const
+TextQuery.cpp (10):void TextQuery::store_file(ifstream &is)
+TextQuery.cpp (10):string TextQuery::whitespace_chars(" \t\n\v\r\f");
+TextQuery.cpp (10):void TextQuery::build_map()
+TextQuery.cpp (10):set<TextQuery::line_no>
+TextQuery.cpp (10):TextQuery::run_query(const string &query_word) const
+TextQuery.cpp (10):void TextQuery::display_map()
+TextQuery.cpp (10):string TextQuery::cleanup_str(const string &word)
+TextQuery.h (10):class TextQuery {
+Use-query-handle.cpp (16):#include "TextQuery.h"
+Use-query-handle.cpp (16):    TextQuery file = build_textfile(argv[1]);
+Use-query-handle.cpp (16):        const set<TextQuery::line_no> locs = orq.eval(file);
+---- TextQuery tq Matches (2 in 2 files) ----
+3ed_querymain.cpp (10):    TextQuery tq;
+Querymain.cpp (10):    TextQuery tq;
